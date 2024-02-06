@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: koti-deployments
+ name: koti-deploymentss
 spec:
  replicas: 1
  strategy: 
     type: Recreate
  selector: 
    matchLabels: 
-     app: koti-kotis
+     app: koti-kotiss
  template:
   metadata:
-   name: koti-kotipods
+   name: koti-kotipodss
    labels:
-     app: koti-kotis	 
+     app: koti-kotiss	 
   spec: 
     containers:
-    - name: koti-kotis
+    - name: koti-kotiss
       image: koteswarararaosairi/k8sma:v12
       imagePullPolicy: Always
       ports:
@@ -26,12 +26,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
- name: koti-services
+ name: koti-servicess
 spec:
   type: NodePort
   selector:
-   app: koti-kotis
+   app: koti-kotiss
   ports:
    - port: 3000
-     targetPort: 3001
+     targetPort: 3000
 ...
