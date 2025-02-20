@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
  name: koti-deploymentss
 spec:
- replicas: 1
+ replicas: v2
  strategy: 
     type: Recreate
  selector: 
